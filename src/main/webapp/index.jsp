@@ -22,7 +22,9 @@
 
       <div class=""><%= (new LoginData(1, "Myro", "Tolo").toString())%> </div>
 
-      <a href="<%=request.getContextPath() + "/pages/form.jsp"%>">Go to Form</a>
+      <form action="<%=request.getContextPath()%>/form" method="get">
+        <button type="submit">Call of form</button>
+      </form>
     </div>
 
   </body>

@@ -13,15 +13,15 @@
   </head>
   <body>
     <%-- Import dependencies --%>
-    <%@page import="java.util.Date, org.obrii.mit.dp2021.toloshnyi.dp2021project.LoginData" %>
+    <%@page import="java.util.Date" %>
 
     <div class="page">
       <h1 class="">Welcome To The Login Page</h1>
 
       <div class=""><%= new Date()%></div>
 
-      <form class="" action="<%=request.getContextPath() + "/pages/submit.jsp"%>" method="post">
-        <input type="hidden" name="title" value="Forwarded page">
+      <form class="" action="<%=request.getContextPath()%>/form" method="post">
+        <input type="hidden" name="title" value="Submitted">
 
         <input type="text" name="name" placeholder="Enter Your name, pls" required>
         <input type="text" name="surname" placeholder="Enter Your surname, pls" required>
@@ -29,9 +29,9 @@
         <input type="radio" name="gender" value="Male" id="male"><label for="male">Male</label>
         <input type="radio" name="gender" value="Female" id="female"><label for="female">Female</label>
 
-        <input type="checkbox" name="language" value="English" id="english"><label for="english">English</label>
-        <input type="checkbox" name="language" value="Hindi" id="hindi"><label for="hindi">Hindi</label>
-        <input type="checkbox" name="language" value="Russian" id="russian"><label for="russian">Russian</label>
+        <input type="checkbox" name="languages" value="English" id="english"><label for="english">English</label>
+        <input type="checkbox" name="languages" value="Hindi" id="hindi"><label for="hindi">Hindi</label>
+        <input type="checkbox" name="languages" value="Russian" id="russian"><label for="russian">Russian</label>
 
         <select class="" name="countries">
           <option selected disabled>Choose your country</option>

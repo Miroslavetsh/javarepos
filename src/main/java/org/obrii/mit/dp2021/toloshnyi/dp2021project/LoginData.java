@@ -14,6 +14,9 @@ public class LoginData {
     private int id;
     private String name;
     private String surname;
+    
+    public LoginData() {
+    }
 
     public LoginData(int id, String name, String surname) {
         this.id = id;

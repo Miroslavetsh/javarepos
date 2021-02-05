@@ -13,18 +13,20 @@
   </head>
   <body>
     <%-- Import dependencies --%>
-    <%@page import="java.util.Date, org.obrii.mit.dp2021.toloshnyi.dp2021project.LoginData" %>
-
+    <%@page import="java.util.Date, java.util.List, org.obrii.mit.dp2021.toloshnyi.dp2021project.User"%>
+    
+    <% User user = (User) request.getAttribute("user");%>
+    
     <div class="page">
       <h1 class="">Welcome To The Submit Page</h1>
 
       <div class=""><%= new Date()%></div>
 
-      <div class="">Name: <%=request.getParameter("name")%></div>
-      <div class="">Surname: <%=request.getParameter("surname")%></div>
+      <div class="">Name: <%=user.getName()%></div>
+      <div class="">Surname: <%=user.getSurname()%></div>
 
       <div class="">Gender: <%
-          String gender = request.getParameter("gender");
+          String gender = user.getGender();
           if (gender != null) {
               out.print(gender);
           } else {
@@ -33,19 +35,16 @@
         %></div>
 
       <div class="">
-        Language(-s):<br /> <% String[] languages = request.getParameterValues("language");
+        Language(-s):<br /> <% List<String> languages = user.getLanguages();
             if (languages != null) {
-                for (int languageIndex = 0; languageIndex < languages.length; languageIndex++) {
-                    out.print(languages[languageIndex]);
-                    out.print("<br />");
-                }
+                    out.print(languages);
             } else {
                 out.print("No languages selected(");
             }%>
       </div>
 
       <div class="">Country: <%
-          String country = request.getParameter("countries");
+          String country = user.getCountry();
           if (country != null) {
               out.print(country);
           } else {
@@ -53,7 +52,9 @@
           }
         %></div>
 
-      <a class="" href="<%=request.getContextPath()%>">Return</a>
+        <form action="<%=request.getContextPath()%>">
+          <button type="submit">Return</button>
+        </form>
     </div>
 
   </body>
