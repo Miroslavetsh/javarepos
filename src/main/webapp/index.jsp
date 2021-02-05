@@ -9,33 +9,21 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <title>MiToProj | Main</title>
   </head>
   <body>
-    <h1>JSP content!</h1>
-    
-    <% out.print("word"); %>
-    
-    <%= "word" %>
-    
-    <%out.print("word");%>
-    
-    <%! public String message() {
-        return "Method output";
-    } %>
-    
-    <%= message()%>
-    
-    <% for(int i = 0; i < 10; i++){ %>
-    <p>Some parameter<%= i%></p>
-    <% }%>
-    
-    <%@page import="java.util.Date, org.obrii.mit.dp2021.toloshnyi.dp2021project.DemoData" %>
-    <%-- <% out.print(new DemoData(1, "Myro", "Tolo").toString()) %> --%>
-   
-    <form action="forward.jsp" method="post">
-      <input type="hidden" name="title" value="forwarded page">
-      <input type="submit" value="Forward">
-    </form>
+    <%-- Import dependencies --%>
+    <%@ page import="java.util.Date, org.obrii.mit.dp2021.toloshnyi.dp2021project.LoginData" %>
+
+    <div class="page">
+      <h1 class="">Welcome To The Main Page</h1>
+
+      <div class=""><%= new Date()%></div>
+
+      <div class=""><%= (new LoginData(1, "Myro", "Tolo").toString())%> </div>
+
+      <a href="<%=request.getContextPath() + "/pages/form.jsp"%>">Go to Form</a>
+    </div>
+
   </body>
 </html>
