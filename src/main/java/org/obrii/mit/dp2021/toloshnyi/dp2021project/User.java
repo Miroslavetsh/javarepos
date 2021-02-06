@@ -18,19 +18,17 @@ public class User {
     private int id;
     private String name;
     private String surname;
-    private String gender;
-    private List<String> languages;
-    private String country;
+    private List<String> countries;
+    private String configuration;
     
     public User() {
     }
     
-    public User(String name, String surname, String gender, String[] languages, String country) {
+    public User(String name, String surname, String[] countries, String configuration) {
         this.name = name;
         this.surname = surname;
-        this.gender = gender;
-        if (languages != null) this.languages = Arrays.asList(languages);
-        this.country = country;
+        if (countries != null) this.countries = Arrays.asList(countries);
+        this.configuration = configuration;
         
     }
 
@@ -58,32 +56,19 @@ public class User {
         this.surname = surname;
     }
 
-    public String getGender() {
-        return gender;
+    public List<String> getCountries() {
+        return countries;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setCountries(List<String> countries) {
+        this.countries = countries;
     }
 
-    public List<String> getLanguages() {
-        return languages;
+    public String getConfiguration() {
+        return configuration;
     }
 
-    public void setLanguages(List<String> languages) {
-        this.languages = languages;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-    
-    @Override
-    public String toString() {
-        return "User{Name = " + name + ", Surname = " + surname + ", Gender=" + gender + ", Languages = " + languages + ", Country = " + country + "}";
+    public void setConfiguration(String configuration) {
+        this.configuration = configuration;
     }
 }

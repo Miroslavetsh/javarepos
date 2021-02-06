@@ -75,9 +75,8 @@ public class FormServlet extends HttpServlet {
         User user = new User(
                 request.getParameter("name"),
                 request.getParameter("surname"),
-                request.getParameter("gender"),
-                request.getParameterValues("languages"),
-                request.getParameter("countries")
+                request.getParameterValues("countries"),
+                request.getParameter("configuration")
         );
         
         request.setAttribute("user", user);
