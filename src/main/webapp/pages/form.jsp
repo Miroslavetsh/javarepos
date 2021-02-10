@@ -21,7 +21,6 @@
 
     <div class="page">
 
-      <picture><source srcset="<%=request.getContextPath()%>/assets/img/smoke.webp" type="image/webp"><img src="<%=request.getContextPath()%>/assets/img/smoke.jpg" alt="" class="smoke"></picture>
       <div class="blured"></div>
       
       <section class="container">
