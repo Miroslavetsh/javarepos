@@ -5,12 +5,10 @@
  */
 package org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.display;
 
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user.OldInterface;
-
 /**
  *
  * @author gxufh
  */
 public interface OldDisplayInterface {
-    public String showUser(OldInterface oldInterface);
+    public String getMessage();
 }

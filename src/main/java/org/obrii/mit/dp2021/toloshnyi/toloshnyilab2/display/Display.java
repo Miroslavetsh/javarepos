@@ -5,7 +5,7 @@
  */
 package org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.display;
 
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user.OldInterface;
+import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user.UserInterface;
 
 /**
  *
@@ -13,8 +13,22 @@ import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user.OldInterface;
  */
 public class Display implements OldDisplayInterface {
     
+    private UserInterface userInterface;
+    
+    public Display (UserInterface userInterface) {
+        this.userInterface = userInterface;
+    }
+    
+    public UserInterface getUserInterface() {
+        return userInterface;
+    }
+    
+    public void setUserInterface(UserInterface userInterface) {
+        this.userInterface = userInterface;
+    }
+    
     @Override
-    public String showUser(OldInterface oldInterface) {
-        return oldInterface.getName();
+    public String getMessage() {
+        return userInterface.getName() + "message from parent method";
     }
 }

@@ -5,12 +5,15 @@
  */
 package org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.display;
 
+import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user.UserInterface;
 /**
  *
  * @author gxufh
  */
-public interface NewDisplayInterface {
+public abstract class ChildNewAbstractDisplay extends Display implements NewDisplayInterface {
     
-    String getAnotherMessage();
+    public ChildNewAbstractDisplay(UserInterface userInterface) {
+        super(userInterface);
+    }
     
 }

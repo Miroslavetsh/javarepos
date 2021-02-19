@@ -9,6 +9,6 @@ package org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user;
  *
  * @author gxufh
  */
-public interface OldInterface {
+public interface UserInterface {
     public String getName();
 }

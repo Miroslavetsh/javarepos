@@ -9,11 +9,16 @@ package org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user;
  *
  * @author gxufh
  */
-public class User implements OldInterface {
-    public String name;
-    
+public class User implements UserInterface {
+
+    private String name;
+
     public User(String name) {
         this.name = name;
+    }
+
+    public User(int number) {
+        this.name = "User" + number;
     }
 
     @Override
@@ -24,6 +29,9 @@ public class User implements OldInterface {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Username: " + this.name;
+    }
 }
