@@ -29,6 +29,6 @@ public class Display implements OldDisplayInterface {
     
     @Override
     public String getMessage() {
-        return userInterface.getName() + "message from parent method";
+        return "Dear " + userInterface.getName() + ", this message is from PARENT method.";
     }
 }

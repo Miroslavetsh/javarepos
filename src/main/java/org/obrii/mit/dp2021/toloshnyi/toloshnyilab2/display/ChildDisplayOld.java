@@ -19,6 +19,6 @@ public class ChildDisplayOld extends Display {
 
     @Override
     public String getMessage() {
-        return "User Name is" + getUserInterface().getName() + "Message from overriden method in child";
+        return "Hello, " + getUserInterface().getName() + ". This message is from OVERRIDEN method in CHILD.";
     }
 }

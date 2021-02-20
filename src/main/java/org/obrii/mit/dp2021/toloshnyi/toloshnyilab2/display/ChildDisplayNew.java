@@ -19,7 +19,7 @@ public class ChildDisplayNew extends ChildNewAbstractDisplay {
 
     @Override
     public String getAnotherMessage() {
-        return "This is another message from user" + getUserInterface().getName();
+        return "This is message from " + getUserInterface().getName() + ". And it means using a new CHILD class.";
     }
 
 }
