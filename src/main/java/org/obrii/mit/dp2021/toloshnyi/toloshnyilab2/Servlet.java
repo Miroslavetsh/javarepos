@@ -5,8 +5,6 @@
  */
 package org.obrii.mit.dp2021.toloshnyi.toloshnyilab2;
 
-import java.util.List;
-import java.util.ArrayList;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,13 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.display.ChildDisplayNew;
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.display.ChildDisplayOld;
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.display.Display;
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.display.NewDisplayInterface;
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.display.OldDisplayInterface;
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user.User;
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab2.user.UserInterface;
 
 /**
  *
@@ -81,22 +72,6 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserInterface user = createUser(request.getParameter("name"));
-        
-        OldDisplayInterface display;
-        
-        if (request.getParameter("interface").equals("old")) {
-            if (request.getParameter("message").equals("parent")) {
-                display = new Display(user);
-            } else {
-                display = new ChildDisplayOld(user);
-            }
-        } else {
-            display = new ChildDisplayNew(user);
-        }
-        
-        List <String> messages = createMessages(display);
-        request.setAttribute("messages", messages);
         request.getRequestDispatcher("submit.jsp").forward(request, response);
     }
 
@@ -105,26 +80,6 @@ public class Servlet extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    
-    public UserInterface createUser(String name) {
-        try {
-            int userNumber = Integer.parseInt(name);
-            return new User(userNumber);
-        } catch (NumberFormatException e) {
-            return new User(name);
-        }
-    }
-    
-    public List<String> createMessages(OldDisplayInterface display) {
-        List<String> result = new ArrayList();
-        result.add(display.getMessage());
-        
-        if (display instanceof NewDisplayInterface) {
-            result.add(((NewDisplayInterface) display).getAnotherMessage());
-        }
-        
-        return result;
-    }
     
     @Override
     public String getServletInfo() {
