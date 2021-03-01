@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.obrii.mit.dp2021.toloshnyi.toloshnyilab2;
+package org.obrii.mit.dp2021.toloshnyi.toloshnyilab3;
 
 import java.io.IOException;
 import java.io.PrintWriter;
