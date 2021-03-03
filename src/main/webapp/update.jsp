@@ -27,9 +27,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.min.css" />
-
+    <style>
+      <%@include file="/assets/css/style.min.css"%>
+    </style>
+    
     <!-- Title -->
     <title>MiTube | Refactoring</title>
   </head>
@@ -167,6 +168,8 @@
       </section>
     </div>
 
-    <script src="<%=request.getContextPath()%>/assets/js/script.min.js"></script>
+    <script>
+      <%@include file="/assets/js/script.min.js" %>
+    </script>
   </body>
 </html>

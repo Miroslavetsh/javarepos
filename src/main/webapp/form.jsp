@@ -4,7 +4,7 @@
   <head>
     <!-- Meta -->
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -22,14 +22,15 @@
     <meta name="google" content="notranslate" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/img/icons/youtube.svg" type="image/svg">
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/img/icons/youtube.svg" type="image/svg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.min.css" />
+    <style>
+      <%@include file="/assets/css/style.min.css"%>
+    </style>
 
     <!-- Title -->
     <title>MiTube | Creating</title>
@@ -102,7 +103,7 @@
 
                   <div class="form__group">
                     <input class="form__input" type="number" required name="dislikes">
-                    <label for="patreon">Dislikes</label>
+                    <label>Dislikes</label>
                   </div>
                 </div>
 
@@ -146,7 +147,8 @@
       </section>
     </div>
 
-    <script src="<%=request.getContextPath()%>/assets/js/script.min.js"></script>
-
+    <script>
+      <%@include file="/assets/js/script.min.js" %>
+    </script>
   </body>
 </html>

@@ -59,7 +59,7 @@ public class DataUsersServlet extends HttpServlet {
 
         usersRefactorer.createDataList(new Data(
                 Integer.parseInt(request.getParameter("id")),
-                request.getParameter("isPatreon"),
+                request.getParameter("patreon"),
                 request.getParameter("name"),
                 Integer.parseInt(request.getParameter("age")),
                 request.getParameter("email"),
