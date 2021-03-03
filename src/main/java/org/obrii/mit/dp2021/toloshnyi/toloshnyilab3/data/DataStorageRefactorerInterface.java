@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.servlets;
+package org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.data;
 
 import java.util.List;
 import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.data.Data;

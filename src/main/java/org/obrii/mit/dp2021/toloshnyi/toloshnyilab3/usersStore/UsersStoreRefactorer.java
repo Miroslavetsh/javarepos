@@ -1,6 +1,6 @@
 package org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.usersStore;
 
-import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.servlets.DataStorageRefactorerInterface;
+import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.data.DataStorageRefactorerInterface;
 import java.util.List;
 import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.data.Data;
 

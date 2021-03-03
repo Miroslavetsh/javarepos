@@ -10,7 +10,7 @@ public class UsersStorage {
     
     private UsersStorage() {
         data = new ArrayList<>();
-        data.add(new Data(0, "patreon", "Myroslav", 18, "dfgshte@gmail.com", "on", "on", 1135, 637, "My comment is three words"));
+        data.add(new Data(0, "patreon", "Myroslav", 18, "dfgshte@gmail.com", "yes", "on", 1135, 637, "My comment is three words"));
     }
     
     public static UsersStorage getUsersStorageInstance() {

@@ -5,6 +5,7 @@
  */
 package org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.servlets;
 
+import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.data.DataStorageRefactorerInterface;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -96,7 +97,6 @@ public class DataUsersServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        request.getRequestDispatcher("form.jsp").forward(request, response);
         
         int userId = Integer.parseInt(request.getParameter("id"));
         
@@ -107,6 +107,6 @@ public class DataUsersServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }
