@@ -28,9 +28,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 
-    <style>
-      <%@include file="/assets/css/style.min.css"%>
-    </style>
+    <!-- Style -->
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.min.css" >
 
     <!-- Title -->
     <title>MiTube | Creating</title>
@@ -66,7 +65,7 @@
           <div class="form__inner">
             <h2 class="form__title">Create the data</h2>
 
-            <form action="<%=request.getContextPath()%>/" method="post" class="form__form">
+            <form action="<%=request.getContextPath()%>/home" method="post" class="form__form">
               <input type="hidden" name="id" value="0"/>
               <div class="form__column">
                 <div class="form__group">
@@ -147,8 +146,6 @@
       </section>
     </div>
 
-    <script>
-      <%@include file="/assets/js/script.min.js" %>
-    </script>
+    <script src="<%=request.getContextPath()%>/assets/js/script.min.js"></script>
   </body>
 </html>

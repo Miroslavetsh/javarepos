@@ -2,14 +2,13 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Meta -->
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
+    
     <!-- SEO -->
     <meta property="og:title" content="MiTube | Admin Panel">
     <meta
@@ -44,7 +43,7 @@
 
           <div class="header__inner">
             <div class="header__logo">
-              <picture><source srcset="../assets/img/logo/logo.svg" type="image/webp"><img src="../assets/img/logo/logo.svg" alt="MiTube Logo" class="logo" ></picture>
+              <picture><source srcset="<%=request.getContextPath()%>/assets/img/logo/logo.svg" type="image/webp"><img src="<%=request.getContextPath()%>/assets/img/logo/logo.svg" alt="MiTube Logo" class="logo" ></picture>
             </div>
 
             <div class="header__search">
@@ -61,7 +60,7 @@
       <div class="preview">
         <div class="container">
 
-          <form action="form.jsp" class="preview__inner">
+          <form action="<%=request.getContextPath()%>/form.jsp" class="preview__inner">
 
             <button type="submit" class="preview__button button button--inv">
               Add to the table
@@ -181,7 +180,7 @@
                 <p class="panel__comment"><%=data.getComment()%></p>
               </div>
 
-              <form action="update.jsp" method="post" class="panel__cell">
+              <form action="<%=request.getContextPath()%>/update.jsp" method="post" class="panel__cell">
                 <input type="hidden" name="id" value="<%=data.getId()%>">
                 <input type="hidden" name="patreon" value="<%=data.getPatreon()%>">
                 <input type="hidden" name="name" value="<%=data.getName()%>">
