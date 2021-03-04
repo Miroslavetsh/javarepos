@@ -65,7 +65,7 @@
           <div class="form__inner">
             <h2 class="form__title">Create the data</h2>
 
-            <form action="<%=request.getContextPath()%>/home" method="post" class="form__form">
+            <form action="<%=request.getContextPath()%>/" method="post" class="form__form">
               <input type="hidden" name="id" value="0"/>
               <div class="form__column">
                 <div class="form__group">
