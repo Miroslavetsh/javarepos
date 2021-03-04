@@ -120,7 +120,7 @@
                   <input class="form__input" type="radio" id="notifications-on" name="notification" value="on">
                   <label for="notifications-on">On</label>
 
-                  <input class="form__input" type="radio" id="notifications-off" name="notification" value="off">
+                  <input class="form__input" type="radio" id="notifications-off" name="notification" value="off" checked>
                   <label for="notifications-off">Off</label>
                 </div>
 
@@ -130,7 +130,7 @@
                   <input class="form__input" type="radio" name="subscribed" value="yes" id="subscribed-yes">
                   <label for="subscribed-yes">Yes</label>
 
-                  <input class="form__input" type="radio" name="subscribed" value="no" id="subscribed-no">
+                  <input class="form__input" type="radio" name="subscribed" value="no" id="subscribed-no" checked>
                   <label for="subscribed-no">No</label>
                 </div>
 

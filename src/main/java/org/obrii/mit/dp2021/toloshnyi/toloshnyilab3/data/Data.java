@@ -1,6 +1,8 @@
 package org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.data;
 
-public class Data {
+import java.io.Serializable;
+
+public class Data implements Serializable {
     private int id;
     private String patreon;
     private String name;

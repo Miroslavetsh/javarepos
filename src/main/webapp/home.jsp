@@ -77,7 +77,7 @@
           <div class="panel__inner">
             <div class="panel__column panel__column--static">
               <div class="panel__cell">
-                <h1 class="panel__title">Admin Panel</h1>
+                <h1 class="panel__title">Role</h1>
               </div>
 
               <div class="panel__cell">
@@ -134,9 +134,9 @@
             <div class="panel__column">
               <div class="panel__cell">
                 <%if (data.getPatreon() == null) {%>
-                    <p class="panel__title">user</p>
+                    <p class="panel__title">User</p>
                 <%} else {%>
-                    <p class="panel__title"><%=data.getPatreon()%></p>
+                    <p class="panel__title">Patreon</p>
                 <%}%>
               </div>
 
