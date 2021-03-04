@@ -9,6 +9,7 @@ public class UsersStoreRefactorer implements DataStorageRefactorerInterface {
     // R - read
     // U - update
     // D - delete
+    // W - write
     
     // Getting our data in List format from UsersStore
     private List<Data> dataList = UsersStorage.getUsersStorage();
@@ -36,5 +37,10 @@ public class UsersStoreRefactorer implements DataStorageRefactorerInterface {
     @Override
     public void deleteDataList(int id) {
         dataList.remove(id);
+    }
+    
+    @Override
+    public void writeDataList(Data data) {
+        
     }
 }
