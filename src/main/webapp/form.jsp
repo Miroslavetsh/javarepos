@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="form__group form__group--textarea">
-                  <textarea class="form__input form__input--txt" placeholder="Short comment from person..." name="comment"></textarea>
+                  <textarea class="form__input form__input--txt" maxlength="40" placeholder="Short comment from person..." name="comment"></textarea>
                 </div>
 
               </div>

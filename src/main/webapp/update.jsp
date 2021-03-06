@@ -112,7 +112,7 @@
                 </div>
 
                 <div class="form__group form__group--textarea">
-                  <textarea class="form__input form__input--txt" placeholder="Short comment from person..." maxlength="80" name="comment"><%=request.getParameter("comment")%></textarea>
+                  <textarea class="form__input form__input--txt" placeholder="Short comment from person..." maxlength="40" name="comment"><%=request.getParameter("comment")%></textarea>
                 </div>
 
               </div>
