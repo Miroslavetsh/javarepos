@@ -78,16 +78,16 @@ public class DataBaseRefactorer implements DataStorageRefactorerInterface {
     @Override
     public void updateDataList(int id, Data data) {
         String updateStatement;
-        updateStatement = "update into users(patreon, name, age, email, subscribed, notification, likes, dislikes, comment) values('"+
-                data.getPatreon() + "'," + "'" +
-                data.getName() + "'," +
-                data.getAge() + ",'" +
-                data.getEmail()+ "'," + "'" + 
-                data.getSubscribed()+ "'," + "'" + 
-                data.getNotification()+ "'," + 
-                data.getLikes() + "," + 
-                data.getDislikes()+ "," + "'" +
-                data.getComment()+ "')";
+        updateStatement = "update users'" +
+                "set patreon='" + data.getPatreon() + "'," +
+                "name='" +data.getName() + "'," +
+                "age=" + data.getAge() + "," +
+                "email='" + data.getEmail()+ "," +
+                "subscribed='" + data.getSubscribed() + "'," +
+                "notification='" + data.getNotification() + "'," +
+                "likes=" + data.getLikes() + "," +
+                "dislikes=" + data.getDislikes() + "," +
+                "comment='" + data.getComment()+ "' where id =" + id;
         
         
         try(Connection connection = PostgreConnection.connect()) {
