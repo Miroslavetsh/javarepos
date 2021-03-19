@@ -10,7 +10,7 @@ public class PostgreConnection {
         
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://obrii.org:5432/db2021mit21s16 [s16 on public]", 
+            c = DriverManager.getConnection("jdbc:postgresql://obrii.org:5432/db2021mit21s16", 
                     "s16", "7220");
         } catch (Exception e) {
             e.printStackTrace();

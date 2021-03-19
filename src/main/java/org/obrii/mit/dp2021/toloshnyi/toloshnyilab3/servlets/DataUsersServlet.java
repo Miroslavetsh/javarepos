@@ -14,17 +14,17 @@ import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.fileworks.FileWorker;
 @WebServlet(name = "DataUsersServlet", urlPatterns = {""})
 public class DataUsersServlet extends HttpServlet {
 
-    UsersStoreRefactorer usersRefactorer = new UsersStoreRefactorer(FileWorker.getFileName());
+//    UsersStoreRefactorer usersRefactorer = new UsersStoreRefactorer(FileWorker.getFileName());
     DataBaseRefactorer dbRefactorer = new DataBaseRefactorer();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (FileWorker.getFileName().equals("")) {
-            FileWorker.setFileName(this.getServletContext().getRealPath("") + "data.txt");
-            usersRefactorer = new UsersStoreRefactorer(FileWorker.getFileName());
-        }
+//        if (FileWorker.getFileName().equals("")) {
+//            FileWorker.setFileName(this.getServletContext().getRealPath("") + "data.txt");
+//            usersRefactorer = new UsersStoreRefactorer(FileWorker.getFileName());
+//        }
 
-        request.setAttribute("data", usersRefactorer.readDataList());
+//        request.setAttribute("data", usersRefactorer.readDataList());
         request.setAttribute("data", dbRefactorer.readDataList());
         request.getRequestDispatcher("home.jsp").forward(request, response);
     }
@@ -32,18 +32,18 @@ public class DataUsersServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        usersRefactorer.createDataList(new Data(
-                Integer.parseInt(request.getParameter("id")),
-                request.getParameter("patreon"),
-                request.getParameter("name"),
-                Integer.parseInt(request.getParameter("age")),
-                request.getParameter("email"),
-                request.getParameter("subscribed"),
-                request.getParameter("notification"),
-                Integer.parseInt(request.getParameter("likes")),
-                Integer.parseInt(request.getParameter("dislikes")),
-                request.getParameter("comment")
-        ));
+//        usersRefactorer.createDataList(new Data(
+//                Integer.parseInt(request.getParameter("id")),
+//                request.getParameter("patreon"),
+//                request.getParameter("name"),
+//                Integer.parseInt(request.getParameter("age")),
+//                request.getParameter("email"),
+//                request.getParameter("subscribed"),
+//                request.getParameter("notification"),
+//                Integer.parseInt(request.getParameter("likes")),
+//                Integer.parseInt(request.getParameter("dislikes")),
+//                request.getParameter("comment")
+//        ));
         
         dbRefactorer.createDataList(new Data(
                 Integer.parseInt(request.getParameter("id")),
@@ -66,19 +66,19 @@ public class DataUsersServlet extends HttpServlet {
 
         int userId = Integer.parseInt(request.getParameter("id"));
 
-        usersRefactorer.updateDataList(userId,
-                new Data(
-                        userId,
-                        request.getParameter("patreon"),
-                        request.getParameter("name"),
-                        Integer.parseInt(request.getParameter("age")),
-                        request.getParameter("email"),
-                        request.getParameter("subscribed"),
-                        request.getParameter("notification"),
-                        Integer.parseInt(request.getParameter("likes")),
-                        Integer.parseInt(request.getParameter("dislikes")),
-                        request.getParameter("comment")
-                ));
+//        usersRefactorer.updateDataList(userId,
+//                new Data(
+//                        userId,
+//                        request.getParameter("patreon"),
+//                        request.getParameter("name"),
+//                        Integer.parseInt(request.getParameter("age")),
+//                        request.getParameter("email"),
+//                        request.getParameter("subscribed"),
+//                        request.getParameter("notification"),
+//                        Integer.parseInt(request.getParameter("likes")),
+//                        Integer.parseInt(request.getParameter("dislikes")),
+//                        request.getParameter("comment")
+//                ));
         
         dbRefactorer.updateDataList(userId,
                 new Data(
@@ -102,7 +102,7 @@ public class DataUsersServlet extends HttpServlet {
 
         int userId = Integer.parseInt(request.getParameter("id"));
 
-        usersRefactorer.deleteDataList(userId);
+//        usersRefactorer.deleteDataList(userId);
         dbRefactorer.deleteDataList(userId);
         doGet(request, response);
     }
