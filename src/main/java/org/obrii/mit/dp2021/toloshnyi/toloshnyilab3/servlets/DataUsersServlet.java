@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.data.Data;
+import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.database.DataBaseRefactorer;
 import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.usersStore.UsersStoreRefactorer;
 import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.fileworks.FileWorker;
 
@@ -14,6 +15,7 @@ import org.obrii.mit.dp2021.toloshnyi.toloshnyilab3.fileworks.FileWorker;
 public class DataUsersServlet extends HttpServlet {
 
     UsersStoreRefactorer usersRefactorer = new UsersStoreRefactorer(FileWorker.getFileName());
+    DataBaseRefactorer dbRefactorer = new DataBaseRefactorer();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,6 +25,7 @@ public class DataUsersServlet extends HttpServlet {
         }
 
         request.setAttribute("data", usersRefactorer.readDataList());
+        request.setAttribute("data", dbRefactorer.readDataList());
         request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
@@ -30,6 +33,19 @@ public class DataUsersServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         usersRefactorer.createDataList(new Data(
+                Integer.parseInt(request.getParameter("id")),
+                request.getParameter("patreon"),
+                request.getParameter("name"),
+                Integer.parseInt(request.getParameter("age")),
+                request.getParameter("email"),
+                request.getParameter("subscribed"),
+                request.getParameter("notification"),
+                Integer.parseInt(request.getParameter("likes")),
+                Integer.parseInt(request.getParameter("dislikes")),
+                request.getParameter("comment")
+        ));
+        
+        dbRefactorer.createDataList(new Data(
                 Integer.parseInt(request.getParameter("id")),
                 request.getParameter("patreon"),
                 request.getParameter("name"),
@@ -63,6 +79,20 @@ public class DataUsersServlet extends HttpServlet {
                         Integer.parseInt(request.getParameter("dislikes")),
                         request.getParameter("comment")
                 ));
+        
+        dbRefactorer.updateDataList(userId,
+                new Data(
+                        userId,
+                        request.getParameter("patreon"),
+                        request.getParameter("name"),
+                        Integer.parseInt(request.getParameter("age")),
+                        request.getParameter("email"),
+                        request.getParameter("subscribed"),
+                        request.getParameter("notification"),
+                        Integer.parseInt(request.getParameter("likes")),
+                        Integer.parseInt(request.getParameter("dislikes")),
+                        request.getParameter("comment")
+                ));
 
         doGet(request, response);
     }
@@ -73,6 +103,7 @@ public class DataUsersServlet extends HttpServlet {
         int userId = Integer.parseInt(request.getParameter("id"));
 
         usersRefactorer.deleteDataList(userId);
+        dbRefactorer.deleteDataList(userId);
         doGet(request, response);
     }
 

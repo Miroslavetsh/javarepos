@@ -11,6 +11,4 @@ public interface DataStorageRefactorerInterface {
     void updateDataList(int id, Data data);
 
     void deleteDataList(int id);
-    
-    void writeDataList(List<Data> data);
 }

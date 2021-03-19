@@ -100,7 +100,6 @@ public class UsersStoreRefactorer implements DataStorageRefactorerInterface {
         this.writeDataList(newDataList);
     }
 
-    @Override
     public void writeDataList(List<Data> data) {
         try ( FileOutputStream f = new FileOutputStream(file);  ObjectOutputStream o = new ObjectOutputStream(f)) {
 
