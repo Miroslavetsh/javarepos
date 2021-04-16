@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add a new user</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{css/style.min.css}">
+    </head>
+    <body>
+        <div class="page">
+        <svg width="233" height="233" viewBox="0 0 233 233" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="116.5" cy="116.5" r="110" stroke="#F56032" stroke-width="13" stroke-dasharray="2 2" />
+        </svg>
+
+        <div class="circle"></div>
+
+        <div class="page__container">
+            <form action="#" th:action="@{./adduser}" th:object="${user}" method="post">
+                <h2 class="page__title">Enter every field, please</h2>
+
+                <div class="page__block">
+                    <label for="name">Name</label>
+                    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                </div>
+
+                <div class="page__block">
+                    <label for="email">Email</label>
+                    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                </div>
+
+                <button class="page__button" type="submit">Add User</button>
+            </form>
+        </div>
+
+    </div>
+    </body>
+</html>
