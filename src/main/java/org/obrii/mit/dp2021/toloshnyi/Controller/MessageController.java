@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.obrii.mit.dp2021.toloshnyi.Controller;
 
 import java.util.List;
@@ -19,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class MessageController {
 
-    private final String URL = "http://dp2021.mit.obrii.org/NevmerzhytskyiProject/Lab7service/student";
+    private final String URL = "http://dp2021.mit.obrii.org/ToloshnyiProject/Lab7service/student";
 
     @Autowired
     RestTemplate restTemplate;
